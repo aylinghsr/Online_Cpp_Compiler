@@ -1,0 +1,27 @@
+
+{% extends "todo/base.html" %}
+
+{% block content %}
+
+
+    <br><br>
+    <div class="row">
+        <div class="">
+            <form method="POST">
+                {% csrf_token %}
+                <di class="row ">
+                <div class="col-md-5 form-group" >
+                    <label for="title" style="color: #d66853 ;font-size:24px; margin-left:110px;">Code</label>
+                    <textarea name="title" class="title form-control text-white bg-dark" style="height:720px;width:1000px ; font-size:21px; margin-left:110px;" id="title" required>{{ code }}</textarea>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5 form-group">
+                    <label for="title"  style="color: #d66853; font-size:24px;"> Output</label>
+                    <label name="memo" class="memo form-control text-{{ color }} bg-dark" id="memo" style="height:720px;width:900px; font-size:21px;">{{ output }}</label>
+                </div>
+   
+        </div>  
+                <button type="submit" class="btn col-md-5 text-dark bg-warning" style="background-color: #d66853 !important; margin-left:580px;">Compile & Run</button>
+            </form>
+    </div>
+{% endblock %}
